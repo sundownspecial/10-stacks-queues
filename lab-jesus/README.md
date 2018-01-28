@@ -1,9 +1,22 @@
-## Whiteboard Challenge 10
+## Stacks - Queue's
+Title: Stacks & Queue's
+Author: Jesus
 
-Complete today's whiteboard challenge and follow the submission instructions below:
+Stack
+    *Push(val)
+        -Add's a new value to the top of the stack
+    *Pop()
+        -Removes the top value in the stack
+    *Peek()
+        -Shows the top value in the stack
 
-1. *Write a function `checkBraces()` to examine whether the pairs and the orders of `{` and `}` are correct in a string, using a Stack.*
+Queue
+    *enqueue(val)
+        -adds a value to the back of the queue
+    *dequeue()
+        -removes value from the front of the queue
 
-2. *Write a function that accepts `n` and a sorted array as it's arguments, and implement binary search on the array using `n` as the value to search.*
-    - If found, return the value `n` and the location in the array as `{value: n, index: i}`
-    - Else return `null`
+SET-UP
+1.Clone repo to working directory
+2.Run npm install
+3.Run node solution.js

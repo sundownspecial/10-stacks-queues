@@ -1,6 +1,8 @@
 'use strict';
 
 const Stack = require('./stack')
+const Q = require('./queue')
+
 
 const solution = module.exports = {};
 
@@ -21,19 +23,18 @@ solution.curlyString = function (str) {
 };
 
 // solution.curlyString(testString);
+let testQueueArr = [0,1,2,3,4,5,6,7,8,9,10]
+solution.queueBuilder = function (arr,pop) {
+  if(arr.length <= 0 || typeof arr !== 'object'|| pop < 0)return 'ERROR: Does not compute'
+  let q = new Q();
 
-
-solution.binarySearch = function (arr, n) {
-  if (typeof n !== 'number' || typeof arr !== 'object' || arr.length === 0) return null;
-  let index = Math.floor(arr.length/2);
-  let max = arr.length
-  let min = 0;
-  for (let k = 0; k<(arr.length/(k*1.24)); k++){
-    if (arr[index] === n) return `{value: ${arr[index]}, index: ${index}}`;
-    if (arr[index] > n) max = index;      
-    if (arr[index] < n) min = index;
-    index = Math.floor((max+min)/2)
+  for(let i = 0; i < arr.length; i++ ) {
+    q.enqueue(arr[i])
   }
-  return 'does not exist';
+
+  for(let k = 0; k < pop; k++ ) {
+    q.dequeue()
+  }
+  return q
 }
 

@@ -3,7 +3,7 @@
 const Node = require('./node')
 
 module.exports = class {
-  constructor(maxSize=1048) {
+  constructor(maxSize=1024) {
     this.top = null
     this.maxSize = maxSize
     this.size = 0
@@ -31,4 +31,5 @@ module.exports = class {
   peek() {
     return this.top
   }
+
 }

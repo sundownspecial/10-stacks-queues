@@ -10,7 +10,7 @@ let testStringInvalid2 = 'Spicy} jalapeno bacon ipsum dolor {amet spare} {{{ribs
 
 
 describe('Solution Module', function() {
-  describe('#Two Largest', function() {
+  describe('#stack', function() {
 
     it('should take in a created SLL and return the correct value from the end', function() {
       expect(solution.curlyString(testString)).toEqual('valid');
@@ -26,22 +26,19 @@ describe('Solution Module', function() {
   });
     
 
-  describe('#Binary Search', function() {
-    let testArray = []
-    let kk = 10000000;
-    for (let i = 0; i < kk; i++) testArray.push(i);
-    
-    let sampleValidResult = {value: 22013, index: 22013}
-    it('should take in a valid input and return an object', function() {
-        expect(solution.binarySearch(testArray, 22013)).toEqual(`{value: ${22013}, index: ${22013}}`);
+  describe('#queue', function() {
+    let testArray = [0,1,2,3,4,5,6,7,8,9,10]    
+    it('should take in a valid input and return an object with the correct answer', function() {
+        expect(solution.queueBuilder(testArray, 9)).toEqual({"count": 10, "lowestCount": 9, "storage": {"9": 10}});
     });
-
-    it('should return null when a string is put into the n parameter in the function', function() {
-      expect(solution.binarySearch(testArray, '22013')).toEqual(null);
-  });
-
-  it('should return null when an empty array is passed into the arr parameter in the function', function() {
-    expect(solution.binarySearch([], 22013)).toEqual(null);
-  });
+    it('should take another valid input and return the correct answer', function() {
+    expect(solution.queueBuilder(testArray, 10)).toEqual({"count": 10, "lowestCount": 10, "storage": {}});
+    });
+    it('should return an error if the ', function() {
+      expect(solution.queueBuilder(testArray, -1)).toEqual('ERROR: Does not compute');
+    });
+    it('should return an error if the input is not an array ', function() {
+      expect(solution.queueBuilder('testArray', 1)).toEqual('ERROR: Does not compute');
+    });
   });
   });
